@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+        <title>Climate Solutions</title>
+    </head>
+
+    <body>
+        <div class="navbar bg-base-100 shadow-lg">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl font-bold" href="/">Climate Solutions</a>
+            </div>
+            
+            <div class="navbar-end">
+                <a href="/about" class="btn btn-ghost">About</a>
+                
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost">
+                        Sector
+                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                        </svg>
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-xl border">
+                        <li><a href="/solutions/projects?sector=Industry">Industry</a></li>
+                        <li><a href="/solutions/projects?sector=Electricity">Electricity</a></li>
+                        <li><a href="/solutions/projects?sector=Transportation">Transportation</a></li>
+                        <li><a href="/solutions/projects?sector=Land Sinks">Land Sinks</a></li>
+                        <li><a href="/solutions/projects?sector=Food, Agriculture, and Land Use">Food, Agriculture, and Land Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto">
+            <div class="hero bg-base-200 min-h-screen">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Hello my friend</h1>
+                        <p class="py-6">
+                            Welcome to our website! Here are some projects we are currently working on, please click on 
+                            the button to explore more details.
+                        </p>
+                        <a href="/solutions/projects" class="btn btn-primary">EXPLORE!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!--card 1-->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <img class="w-full" src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" alt="Abandoned Farmland" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Abandoned Farmland Restoration</h2>
+                        <p>Restoration can bring degraded farmland back into productivity and sequester carbon in the process.</p>
+                        <div class="card-actions justify-end">
+                        <a href="/solutions/projects/1" class="btn btn-neutral">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!--card 2-->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <img class="w-full" src="https://drawdown.org/sites/default/files/solutions2020/solution_alternativecement02.jpg" alt="Alternative Cement" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Alternative Cement</h2>
+                        <p>Conventional cement production is a significant source of carbon dioxide. Reformulation can reduce emissions by millions of metric tons each year.</p>
+                        <div class="card-actions justify-end">
+                        <a href="/solutions/projects/2" class="btn btn-neutral">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!--card 3-->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <img class="w-full" src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg" alt="Bicycle Infrastructure" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Bicycle Infrastructure</h2>
+                        <p>Infrastructure is essential for supporting safe and abundant bicycle use, which curbs emissions by reducing the need for fossil-fuel-dependent transportation.</p>
+                        <div class="card-actions justify-end">
+                        <a href="/solutions/projects/3" class="btn btn-neutral">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+    </body>
+</html>
+
