@@ -8,6 +8,7 @@
 *  
 *  Name: Gretchen Ding Student ID: 123509242 Date: 06/13/2025
 * 
+*  Published URL: web-assignment3-alpha.vercel.app
 ********************************************************************************/
 
 const projectData = require("./modules/projects");
