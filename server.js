@@ -58,7 +58,7 @@ projectData.initialize()
             
             projectData.getProjectById(projectId)
                 .then((project)=>{
-                    res.render("project.ejs", {project: project});
+                    res.render("project", {project: project});
                 }) 
                 .catch((err)=>{
                     res.status(404).render("404", {message: "No projects found for a specific id"});
