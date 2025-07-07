@@ -1,12 +1,12 @@
 /******************************************************************************** 
-*  WEB322 – Assignment 03 
+*  WEB322 – Assignment 04 
 *  
 *  I declare that this assignment is my own work in accordance with Seneca's 
 *  Academic Integrity Policy: 
 *  
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html 
 *  
-*  Name: Gretchen Ding Student ID: 123509242 Date: 06/13/2025
+*  Name: Gretchen Ding Student ID: 123509242 Date: 07/06/2025
 * 
 *  Published URL: web-assignment3-alpha.vercel.app
 ********************************************************************************/
@@ -16,6 +16,8 @@ const express = require('express');
 const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 
@@ -23,12 +25,11 @@ app.use(express.static(__dirname + '/public'));
 projectData.initialize()
     .then(()=>{
         app.get('/', (req, res)=>{
-            //res.send("Assignment 2:  Gretchen Ding - 123509242");
-            res.sendFile(__dirname + '/views/home.html');
+            res.render("home");
         })
 
         app.get('/about', (req, res)=>{
-            res.sendFile(__dirname + '/views/about.html');
+            res.render("about");
         })
 
         app.get('/solutions/projects', (req, res)=>{
@@ -37,15 +38,16 @@ projectData.initialize()
             if (sector) {
                 projectData.getProjectsBySector(sector)
                     .then((projects)=>{
-                        res.send(projects);
+                        res.render("projects", {projects: projects});
                     })
                     .catch((err)=>{
-                         res.status(404).send(err);
+                        res.status(404).render("404", {message: "No projects found for a matching sector"});
+
                     });
             } else {
                 projectData.getAllProjects()
                     .then((projects)=>{
-                        res.send(projects);
+                        res.render("projects", {projects: projects});
                     });
             }
         })
@@ -56,17 +58,18 @@ projectData.initialize()
             
             projectData.getProjectById(projectId)
                 .then((project)=>{
-                    res.send(project);
+                    res.render("project.ejs", {project: project});
                 }) 
                 .catch((err)=>{
-                     res.status(404).send(err);
+                    res.status(404).render("404", {message: "No projects found for a specific id"});
+
                 })
             });
 
 
         // lastly 404 
         app.use((req, res, next) => {
-            res.status(404).sendFile(__dirname + '/views/404.html');
+            res.status(404).render("404", {message: "No view matched for a specific route "});
         });
 
 

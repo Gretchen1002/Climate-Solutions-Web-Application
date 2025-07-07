@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+        <title>Projects</title>
+    </head>
+
+    <body>
+        <%- include('partials/navbar', {page: '/solutions/projects'}) %>
+        <br>
+        
+        <div class="px-4 md:px-8 lg:px-16 xl:px-32">
+                <div class="hero bg-base-200 rounded-lg p-6">
+                    <div class="hero-content">
+                        <div class="max-w-4xl">
+                            <h1 class="text-5xl font-bold text-center">Projects</h1>
+                            <p class="py-6 text-center">
+                                The table below has the projects we are currently working on, please click on the buttons to explore more details.
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="/solutions/projects?sector=Electricity" class="btn btn-active btn-primary">Electricity</a>
+                                <a href="/solutions/projects?sector=Transportation" class="btn btn-active btn-primary">Transportation</a>
+                                <a href="/solutions/projects?sector=Land Sinks" class="btn btn-active btn-primary">Land Sinks</a>
+                                <a href="/solutions/projects?sector=Industry" class="btn btn-active btn-primary">Industry</a>
+                                <a href="/solutions/projects?sector=Food, Agriculture, and Land Use" class="btn btn-active btn-primary">Food, Agriculture, and Land Use</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            <br>
+                
+            <div class="max-w-6xl mx-auto">
+                <div class="overflow-x-auto bg-base-100 rounded-lg shadow-lg">
+                <table class="table">
+                    <!-- head -->
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Sector</th>
+                        <th>Short Summary</th>
+                        <th>Link</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <!-- rows: iterate using forEach -->
+                    <% projects.forEach( element => { %>
+                        <tr>
+                            <!--title-->
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="mask mask-squircle h-12 w-12">
+                                            <img
+                                            src= <%= element.feature_img_url %>
+                                            alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold"><%= element.title %></div>
+                                    </div>                    
+                            </td>
+                            <!--sector-->
+                            <td>
+                                <a href="/solutions/projects?sector=<%= element.sector %>" class="btn btn-sm btn-primary"><%= element.sector %></a>
+                            </td>
+                            <!--short summary-->
+                            <td><%= element.summary_short %></td>
+                            <!--link-->
+                            <td>
+                                <a href="/solutions/projects/<%= element.id %>" class="btn btn-sm btn-neutral"><%= element.id %></a>                       
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+            </div>
+
+        </div>
+        
+
+    </body>
+</html>
+

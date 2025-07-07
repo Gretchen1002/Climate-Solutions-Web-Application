@@ -4,7 +4,7 @@ module.exports = {
     themes: ["light", "dark", "cupcake"],
   },
   
-  content: ["./views/**/*.html"],
+  content: ["./views/**/*.ejs"],
   // safelist: [
   //   {pattern: /^(btn|navbar|dropdown|menu)/, variants: ['hover', 'focus']},
   // ],
