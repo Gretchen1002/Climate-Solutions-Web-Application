@@ -77,7 +77,7 @@ projectData.initialize()
 
         
     }) 
-    .catch((err)=> console.log('Fail to initialize.'));
+    .catch((err)=> console.log('Fail to initialize. '));
    
 
 
