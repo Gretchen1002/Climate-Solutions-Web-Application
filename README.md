@@ -6,17 +6,12 @@ A modern, responsive web application showcasing climate solutions projects built
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [File Structure](#file-structure)
 - [API Endpoints](#api-endpoints)
 - [Pages](#pages)
 - [Styling](#styling)
 - [Scripts](#scripts)
 - [Development](#development)
 - [Deployment](#deployment)
-- [Requirements](#requirements)
-- [Notes](#notes)
 
 ## Overview
 
